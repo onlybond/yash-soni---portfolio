@@ -1,0 +1,53 @@
+
+.flex {
+  display: flex;
+}
+.flexColumn {
+  display: flex;
+  flex-direction: column;
+}
+space {
+  justify-content: space-between;
+}
+
+
+/* Colors */
+
+.bgBlack {background-color: $black;}
+.bgWhite {background-color: $white;}
+.bgStory {background-color: $story;}
+.bgSand {background-color: $sand;}
+
+.opacity-8{opacity: 0.8;}
+.opacity-6{opacity: 0.6;}
+
+.txtBlack {color: $black !important;}
+.txtWhite {color: $white;}
+.txtStory {color: $story;}
+.txtSand {color: $sand;}
+
+.fillWhite{fill: $white;}
+.fillBlack{fill: $black;}
+.fillStory{fill: $story;}
+.fillSand{fill: $sand;}
+
+.borderWhite{border-color: $white;}
+.borderBlack{border-color: $black;}
+
+/* Typography */
+
+.letter-spacing-h1 { letter-spacing: -10px }
+
+.fsh1 {font-size: $fsh1;}
+.fsh2 {font-size: $fsh2;}
+.fsh3 {font-size: $fsh3;}
+.fsText {font-size: $fsText;}
+@media screen and (max-width: 1800px) {
+  .fsh1 {font-size: $fsh1-med;}
+  .fsh2 {font-size: $fsh2-med;}
+  .fsh3 {font-size: $fsh3-med;}
+  .fsText {font-size: $fsText-med;}
+}
+
+
+.ffFutura {font-family: $ffLausanne300;}
