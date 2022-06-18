@@ -6,9 +6,9 @@ Error: Undefined variable: "$story".
 2:   background: $story;
 3:   width: 100vw;
 4:   padding: 5rem 0 5rem 0;
-5: 
-6:   h2{
-7:     font-weight: 200;
+5:   overflow: hidden;
+6: 
+7:   h2{
 
 Backtrace:
 footer.scss:2
@@ -58,4 +58,4 @@ footer.scss:2
 body:before {
   white-space: pre;
   font-family: monospace;
-  content: "Error: Undefined variable: \"$story\".\A         on line 2 of footer.scss\A \A 1: footer{\A 2:   background: $story;\A 3:   width: 100vw;\A 4:   padding: 5rem 0 5rem 0;\A 5: \A 6:   h2{\A 7:     font-weight: 200;"; }
+  content: "Error: Undefined variable: \"$story\".\A         on line 2 of footer.scss\A \A 1: footer{\A 2:   background: $story;\A 3:   width: 100vw;\A 4:   padding: 5rem 0 5rem 0;\A 5:   overflow: hidden;\A 6: \A 7:   h2{"; }

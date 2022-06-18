@@ -55,8 +55,8 @@
 
   <section class="container" data-scroll-section>
 
-    <h3 class="work ffFutura fsh1 letter-spacing-h1" data-scroll>
-      Work
+    <h3 class="work ffFutura fsh1 letter-spacing-h1" data-scroll data-scroll-call="Work">
+      <span>Work</span>
     </h3>
     <section class="imagesSection__grid" data-scroll>
       <article class="imagesSectionText txtBlack" data-scroll>
@@ -74,8 +74,8 @@
     </section>
   </section>
 
-  <section class="screenSection videoSec txtWhite" data-scroll-section data-scroll-position="top">
-    <section class="bgBlack" data-scroll data-scroll-target=".videoSec" data-scroll-sticky data-scroll-position="top" @mouseenter="follow('Play')" @mouseleave="unfollow()">
+  <section class="screenSection videoSec txtWhite" data-scroll-section data-scroll-call="videoSec">
+    <section class="bgBlack" data-scroll data-scroll-target=".videoSec" data-scroll-sticky :data-scroll-offset="videoSecOffset" @mouseenter="follow('Play')" @mouseleave="unfollow()">
       <star-text text="Work in motion" color="White" data-scroll></star-text>
       <div class="videoSecVideo" data-scroll>
         <video playsinline loop="loop" id="videoScaleUp" muted="muted" autoplay>
@@ -101,7 +101,7 @@
         </video>
       </li>
       <li class="media three" data-scroll data-scroll-direction="horizontal" data-scroll-speed="-1" data-scroll-target="#home-news-sec">
-        <img src="@/assets/background/spreadTheNews/home-news-2.jpeg" alt="" >
+        <img loading="lazy" src="@/assets/background/spreadTheNews/home-news-2.jpeg" alt="" >
       </li>
       <li class="media four" data-scroll data-scroll-direction="horizontal" data-scroll-speed="-1.4" data-scroll-target="#home-news-sec">
         <video playsinline="" loop="loop" muted="muted" autoplay>
@@ -109,7 +109,7 @@
         </video>
       </li>
       <li class="media five" data-scroll data-scroll-direction="horizontal" data-scroll-speed="1.4" data-scroll-target="#home-news-sec">
-        <img src="@/assets/background/spreadTheNews/home-news-5.jpeg" alt="">
+        <img loading="lazy" src="@/assets/background/spreadTheNews/home-news-5.jpeg" alt="">
       </li>
     </ul>
 
@@ -158,7 +158,9 @@ export default {
   data(){
     return{
       headerOn: true,
-      hambOn: false
+      hambOn: false,
+      videoSecOffset: 4 * (document.documentElement.clientWidth / 100),
+      updated: false
     }
   },
   methods: {
@@ -185,6 +187,7 @@ export default {
 
 
 
+
     //landing animation
     var load = gsap.timeline();
     load.add('start')
@@ -205,6 +208,14 @@ export default {
       lerp : 0.1,
     });
 
+    //UPDATE the scroll to avoid various problems
+    scroll.on('call', (e) => {
+      if (!this.updated) {
+        console.log(e)
+        this.updated = true
+        scroll.update()
+      }
+    })
 
     //evenement, when we scroll...
     scroll.on("scroll", (e) =>{

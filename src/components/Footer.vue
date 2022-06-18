@@ -1,12 +1,18 @@
 <template>
   <footer data-scroll-section class="txtSand ffFutura" data-scroll-position="bottom">
-    <div class="container">
+    <div class="container" data-scroll data-scroll-speed="-5" data-scroll-offset="-10%">
 
 
       <div class="footerFirstDiv">
         <h2 class="fsh2 letter-spacing-h1" data-scroll>
-          Our<br>
-          Story
+          <span>Our<br>Story</span>
+          <span>
+
+            <video playsinline="" loop="loop" muted="muted" autoplay>
+              <source src="@/assets/videos/footer.mp4" type="video/mp4" data-v-4a179df6="">
+            </video>
+          </span>
+
         </h2><br>
         <p class="fsh3 opacity-8" data-scroll>
           The story behind Exo Ape is one of <br>exploration, creativity and curiosity.

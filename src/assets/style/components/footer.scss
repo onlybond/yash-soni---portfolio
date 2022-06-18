@@ -2,10 +2,22 @@ footer{
   background: $story;
   width: 100vw;
   padding: 5rem 0 5rem 0;
+  overflow: hidden;
 
   h2{
     font-weight: 200;
     margin: 0;
+    display: flex;width: 100%;
+
+    & :last-child{
+      position: relative;
+    }
+    video{
+      position: absolute;
+      top: 0;left: 0;
+      height: 100%;
+      width: calc(100% + 8vw);
+    }
   }
 
   .line{

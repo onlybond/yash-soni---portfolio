@@ -1,21 +1,21 @@
 /*
 Error: Undefined variable: "$white".
-        on line 78 of header.scss
+        on line 79 of header.scss
 
-73:       margin-left: 6px;
-74: 
-75:       .line{
-76:         width: 100%;
-77:         height: 2px;
-78:         background-color: $white;
-79:         display: block;
-80:         transition: transform 0.1s cubic-bezier(0.165, 0.84, 0.44, 1);
-81:         transform-origin: right;
-82: 
-83:       }
+74:       margin-left: 6px;
+75: 
+76:       .line{
+77:         width: 100%;
+78:         height: 2px;
+79:         background-color: $white;
+80:         display: block;
+81:         transition: transform 0.1s cubic-bezier(0.165, 0.84, 0.44, 1);
+82:         transform-origin: right;
+83: 
+84:       }
 
 Backtrace:
-header.scss:78
+header.scss:79
 /Users/louislasserre/.rbenv/versions/3.0.3/lib/ruby/gems/3.0.0/gems/sass-3.7.4/lib/sass/script/tree/variable.rb:49:in `_perform'
 /Users/louislasserre/.rbenv/versions/3.0.3/lib/ruby/gems/3.0.0/gems/sass-3.7.4/lib/sass/script/tree/node.rb:50:in `perform'
 /Users/louislasserre/.rbenv/versions/3.0.3/lib/ruby/gems/3.0.0/gems/sass-3.7.4/lib/sass/tree/visitors/perform.rb:398:in `visit_prop'
@@ -95,4 +95,4 @@ header.scss:78
 body:before {
   white-space: pre;
   font-family: monospace;
-  content: "Error: Undefined variable: \"$white\".\A         on line 78 of header.scss\A \A 73:       margin-left: 6px;\A 74: \A 75:       .line{\A 76:         width: 100%;\A 77:         height: 2px;\A 78:         background-color: $white;\A 79:         display: block;\A 80:         transition: transform 0.1s cubic-bezier(0.165, 0.84, 0.44, 1);\A 81:         transform-origin: right;\A 82: \A 83:       }"; }
+  content: "Error: Undefined variable: \"$white\".\A         on line 79 of header.scss\A \A 74:       margin-left: 6px;\A 75: \A 76:       .line{\A 77:         width: 100%;\A 78:         height: 2px;\A 79:         background-color: $white;\A 80:         display: block;\A 81:         transition: transform 0.1s cubic-bezier(0.165, 0.84, 0.44, 1);\A 82:         transform-origin: right;\A 83: \A 84:       }"; }
