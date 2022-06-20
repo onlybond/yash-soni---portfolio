@@ -53,7 +53,7 @@
   </section>
   <!-- End of Hero-->
 
-  <section class="container" data-scroll-section>
+  <section class="container sectionHome2" data-scroll-section>
 
     <h3 class="work ffFutura fsh1 letter-spacing-h1" data-scroll data-scroll-call="Work">
       <span>Work</span>
@@ -159,7 +159,7 @@ export default {
     return{
       headerOn: true,
       hambOn: false,
-      videoSecOffset: 4 * (document.documentElement.clientWidth / 100),
+      videoSecOffset: 3 * (document.documentElement.clientWidth / 100),
       updated: false
     }
   },
@@ -184,20 +184,26 @@ export default {
 
 
     var test = CustomEase.create("superEase", "0.165, 0.84, 0.44, 1");
+    var test2 = CustomEase.create("ExoApesuperEase","M0,0 C0.496,0.004 0,1 1,1")
 
 
 
 
-    //landing animation
-    var load = gsap.timeline();
+    /*landing animation*/
+    var load = gsap.timeline({delay: 2 });
     load.add('start')
-    /*load.from(".loader",{scaleY: 1, delay: 3, duration: .8, ease: "superEase"}, 'start')*/
+    /*load.from(".loader",{scaleY: 1, delay: 3, duration: .8, ease: "superEase"}, 'start')
 
     load.from(".background",{translateY: "110%",rotate:8, delay: 3, duration: .7, ease: "superEase"}, "start")
     load.from(".loader",{translateY: "-50%",rotate:7, delay: 3.2, duration: 1.1, ease: "superEase"}, "start")
-    /*load.set(".loader", {display: "none"})*/
-    load.from(".textAnimStart", {y: "180%", duration: 1.2, rotate: 6, delay:"4", ease: "superEase"}, "start")
+    /*load.set(".loader", {display: "none"})
+    load.from(".textAnimStart", {y: "180%", duration: 1.2, rotate: 6, delay:"4", ease: "superEase"}, "start")*/
 
+    //v2
+    load.to(".loader", {clipPath: "polygon(0% 0%, 100% 0%, 100% 0%, 0% 0%)", delay:0.2, duration: 1, ease: "ExoApesuperEase"}, "start")
+    load.from(".background",{translateY: "105%",rotate:"20deg",scale: 3,  duration: 1, ease: "ExoApesuperEase"}, "start")
+    load.from(".textAnimStart", {y: "180%", duration: 1.2, rotate: 6, ease: "superEase"})
+    load.set(".loader", {display: "none"})
 
 
 
@@ -270,6 +276,10 @@ export default {
         gsap.set('.stateScroll', {display: "none" ,delay:0.3})
 
         this.hambOn = false
+      }
+      const section2 = document.querySelector('.sectionHome2')
+      if (section2.classList.contains('is-inview')){
+        console.log("black")
       }
     })
 

@@ -1,13 +1,11 @@
 .loader{
-  width: 140vw;
-  height: 140vh;
-  position: relative;
-
-  transform-origin: top;
+  width: 100vw;
+  height: 100vh;
+  position: fixed;
+  clip-path: polygon(0% 0%, 100% 0%, 100% 140%, 0% 110%);
   background: $black;
-  z-index: 3;
-  position: fixed;top: 50%;left: 50%;
-  transform: translate(-50%, -150%);
+  z-index: 4;
+  inset: 0;
 
   //hambContentWrapper
   .hambContentWrapper{
@@ -17,7 +15,7 @@
 
     position: fixed;
     top: 0;
-    transform: rotate(-7deg) translate(19.95%, 25%) scale(1);
+    transform: rotate(-10deg) translateY(-70%) scale(1.4);
     transform-origin: top;
     .hambContentContainer{
       position: relative;
@@ -25,6 +23,7 @@
       height: 100%;
       display: flex;
       align-items: center;
+      transform-origin: bottom;
       gap: 18vw;
 
       .hambContentSide{
@@ -109,12 +108,19 @@
   }
 
 }
-
+@keyframes loadUp {
+  0% {
+    clip-path: polygon(0% 0%, 100% 0%, 100% 100%, 0% 100%);
+  }
+  100% {
+    clip-path: polygon(0% 0%, 100% 0%, 100% 0%, 0% 0);
+  }
+}
 
 .background{
   transform: translate(-50%, 0);
-  transform-origin: bottom;
-  top: 0px;left: 50%;
+  transform-origin: top;
+  top: 0;left: 50%;
   width: 110%;
   height: 100%;
   position: absolute;

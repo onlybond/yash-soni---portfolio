@@ -54,6 +54,7 @@ export default {
 
         //hide hamb
         var crossHamb = gsap.timeline();
+        crossHamb.set(".pageHeader", {zIndex: 6})
         crossHamb.add("hideHamb")
         crossHamb.add("hideShow")
         crossHamb.add("showCross")
@@ -73,9 +74,13 @@ export default {
 
         var show = gsap.timeline();
         show.set('.hambContentWrapper', {display: "block"})
+        show.set(".loader", {display: "block"})
+
         show.add('down')
-        show.to(".loader",{translateY: "-50%",rotate:7, duration: 1, ease: "superEase"}, 'down')
-        show.to('.page', {rotate: 7, scale: "1.4", translateY: "5%", duration: 1, ease: "superEase"}, 'down')
+        show.to(".loader", {clipPath: "polygon(0% 0%, 100% 0%, 100% 140%, 0% 110%)",delay: 0.1, duration: 1, ease: "superEase"}, "down")
+        show.to('.page', {rotate: 7, scale: "1.4", translateY: "5%",delay: 0.1, duration: 1, ease: "superEase"}, "down")
+        show.to(".hambContentWrapper", {translateY: 0,translateX: 0, rotate: 0,scale:1, delay: 0.1, duration: 1, ease: "superEase"}, "down")
+
         this.hambMenuOn = true
         return
       }
@@ -87,7 +92,7 @@ export default {
         gsap.set('.croix', {display: "none", delay: 0.50})
 
         //show hamb
-        gsap.set('.hamb', {display: "flex", delay: 0.51})
+        gsap.set('.hamb', {display: "flex", delay: 0.50})
         gsap.to('.line3', {scaleX: 1,duration: 0.1, ease: "linear", delay: 0.52})
         gsap.to('.line2', {scaleX: 1,duration: 0.1, ease: "linear", delay: 0.64})
         gsap.to('.line1', {scaleX: 1,duration: 0.1, ease: "linear", delay: 0.74})
@@ -95,9 +100,10 @@ export default {
 
         var hide = gsap.timeline();
         hide.add('up')
-        hide.to(".loader",{translateY: "-150%",rotate:0, duration: 1, ease: "superEase"}, 'up')
-        hide.to('.page', {rotate: 0,scale: "1", translateY: "0", duration: 1, ease: "superEase"}, 'up')
-        hide.set('.hambContentWrapper', {display: "none"})
+        hide.to(".loader", {clipPath: "polygon(0% 0%, 100% 0%, 100% 0%, 0% 0%)", delay:0.1, duration: 1, ease: "superEase"}, "up")
+        hide.to('.page', {rotate: 0,scale: "1", translateY: "0",delay: 0.1, duration: 1, ease: "superEase"}, 'up')
+        hide.to(".hambContentWrapper", {translateY: "-70%", rotate: -10,scale: 1.4,delay: 0.1, duration: 1, ease: "superEase"}, "up")
+
         this.hambMenuOn = false
         return ""
       }

@@ -1,21 +1,21 @@
 /*
 Error: Undefined variable: "$black".
-        on line 7 of loader-image.scss
+        on line 6 of loader-image.scss
 
-2:   width: 140vw;
-3:   height: 140vh;
-4:   position: relative;
-5: 
-6:   transform-origin: top;
-7:   background: $black;
-8:   z-index: 3;
-9:   position: fixed;top: 50%;left: 50%;
-10:   transform: translate(-50%, -150%);
-11: 
-12:   //hambContentWrapper
+1: .loader{
+2:   width: 100vw;
+3:   height: 100vh;
+4:   position: fixed;
+5:   clip-path: polygon(0% 0%, 100% 0%, 100% 140%, 0% 110%);
+6:   background: $black;
+7:   z-index: 4;
+8:   inset: 0;
+9: 
+10:   //hambContentWrapper
+11:   .hambContentWrapper{
 
 Backtrace:
-loader-image.scss:7
+loader-image.scss:6
 /Users/louislasserre/.rbenv/versions/3.0.3/lib/ruby/gems/3.0.0/gems/sass-3.7.4/lib/sass/script/tree/variable.rb:49:in `_perform'
 /Users/louislasserre/.rbenv/versions/3.0.3/lib/ruby/gems/3.0.0/gems/sass-3.7.4/lib/sass/script/tree/node.rb:50:in `perform'
 /Users/louislasserre/.rbenv/versions/3.0.3/lib/ruby/gems/3.0.0/gems/sass-3.7.4/lib/sass/tree/visitors/perform.rb:398:in `visit_prop'
@@ -62,4 +62,4 @@ loader-image.scss:7
 body:before {
   white-space: pre;
   font-family: monospace;
-  content: "Error: Undefined variable: \"$black\".\A         on line 7 of loader-image.scss\A \A 2:   width: 140vw;\A 3:   height: 140vh;\A 4:   position: relative;\A 5: \A 6:   transform-origin: top;\A 7:   background: $black;\A 8:   z-index: 3;\A 9:   position: fixed;top: 50%;left: 50%;\A 10:   transform: translate(-50%, -150%);\A 11: \A 12:   //hambContentWrapper"; }
+  content: "Error: Undefined variable: \"$black\".\A         on line 6 of loader-image.scss\A \A 1: .loader{\A 2:   width: 100vw;\A 3:   height: 100vh;\A 4:   position: fixed;\A 5:   clip-path: polygon(0% 0%, 100% 0%, 100% 140%, 0% 110%);\A 6:   background: $black;\A 7:   z-index: 4;\A 8:   inset: 0;\A 9: \A 10:   //hambContentWrapper\A 11:   .hambContentWrapper{"; }
