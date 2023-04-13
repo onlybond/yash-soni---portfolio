@@ -1,0 +1,180 @@
+.page {
+  transform-origin: top;
+}
+#kingkongLoader {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 14vw;
+  height: 14vw;
+  z-index: 10;
+  color: red;
+  display: none;
+  path {
+    stroke: #2c3e50;
+    fill-rule: nonzero;
+  }
+}
+
+.container {
+  margin: 0 8vw;
+}
+.screenSection {
+  height: 100vh;
+  width: 100vw;
+}
+
+//texte underline from left to right animation
+.anim {
+  position: relative;
+  padding: 5px 0;
+}
+
+.anim::before {
+  content: "";
+  display: block;
+  height: 1px;
+  width: 100%;
+  background: $black;
+  position: absolute;
+  bottom: 0px;
+  transform-origin: right center;
+  left: 0;
+
+  transform: scaleX(0);
+  transition: transform 0.6s cubic-bezier(0.165, 0.84, 0.44, 1);
+}
+.sand::before {
+  background-color: $sand;
+}
+.anim:hover::before {
+  transform: scaleX(1);
+  transform-origin: left center;
+}
+
+//link with arrow coming from left animation
+.flecheAnim {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  position: relative;
+  pointer-events: all;
+}
+.flecheAnim a {
+  position: relative;
+  text-decoration: none;
+  transition: transform 0.6s cubic-bezier(0.165, 0.84, 0.44, 1);
+}
+.flecheAnim a::after {
+  content: "";
+  display: block;
+  height: 1px;
+  width: 100%;
+  position: absolute;
+  bottom: -5px;
+  transform-origin: right center;
+  left: 0;
+  transform: scaleX(1);
+  transition: transform 0.6s cubic-bezier(0.165, 0.84, 0.44, 1);
+}
+.flecheAnim .aWhite::after {
+  background: $white;
+}
+.flecheAnim .aBlack::after {
+  background: $black;
+}
+.flecheAnimCircle {
+  width: 5px;
+  height: 5px;
+  border: 1px solid;
+
+  border-radius: 50%;
+  position: relative;
+}
+.whiteCircle {
+  width: 2px;
+  height: 2px;
+  border-radius: 50%;
+  opacity: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  z-index: 5;
+  transition: transform 0.6s cubic-bezier(0.165, 0.84, 0.44, 1);
+  transform: translate(-50%, -50%) scale(0);
+  transform-origin: center;
+  overflow: hidden;
+}
+.blackArrow {
+  width: 14px;
+  height: 14px;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  z-index: 6;
+  transform: translate(-100%, -50%) scale(calc(1 / 18));
+  display: flex;
+  place-items: center;
+  transform-origin: center;
+  transition: transform 0.5s cubic-bezier(0.165, 0.84, 0.44, 1);
+}
+
+//hover ---------------
+.flecheAnim:hover a::after {
+  transform: scaleX(0);
+}
+
+.flecheAnim:hover {
+  a {
+    transform: translateX(16px);
+  }
+  .whiteCircle {
+    transform: translate(-50%, -50%) scale(18);
+  }
+  .blackArrow {
+    transform: translate(-30%, -50%) scale(calc(1/10));
+    // margin: 2px;
+  }
+}
+//-----------------------
+
+//animation du texte on load
+
+.textAnimStart-container {
+  height: fit-content;
+  overflow: hidden;
+  .textAnimStart {
+    display: block;
+    margin-right: 10px;
+  }
+}
+//circle follow the mouse
+
+.circleFollow {
+  position: fixed;
+  z-index: 15;
+  pointer-events: none;
+  width: 80px;
+  height: 80px;
+  top: 0;
+  left: 0;
+  border-radius: 50%;
+  transform: translate(0, 0) scale(0);
+  transition: all 0.7s cubic-bezier(0.165, 0.84, 0.44, 1);
+  background: rgba(108, 108, 108, 0.15);
+  -webkit-tap-highlight-color: transparent;
+  -webkit-box-shadow: inset 1px 0px 187px 93px rgba(77, 77, 77, 1);
+  -moz-box-shadow: inset 1px 0px 187px 93px rgba(77, 77, 77, 1);
+  box-shadow: inset 1px 0px 187px 93px rgba(77, 77, 77, 1);
+  // filter: blur(1px);
+  // opacity: 0.8;
+  display: grid;
+  place-items: center;
+  p {
+    color: $white;
+  }
+}
